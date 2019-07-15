@@ -1,5 +1,6 @@
 const axios = require('axios');
 const schema = require('./helper/schema');
+require('dotenv').config();
 
 const endpoint = 'https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/hosted/pay'
 
@@ -7,10 +8,17 @@ module.exports = async (data) => {
 	try {
 		const answers = await data;
 		const result = await schema.validate(answers)
-		console.log(result);
-		// const result = await axios.post(endpoint);
+		const response = await axios.post(endpoint, { PBFPubKey: process.env.SECRET, ...result });
+
+		if (response.data.status === 'success') {
+			console.log('Payment Successful')
+		}
 	} catch (err) {
-		console.log(err);
+		if (err.isJoi) {
+			console.log('An error occurred, ' + err.details[0].message);
+		} else {
+			console.log(err);
+		}
 	}
 };
 

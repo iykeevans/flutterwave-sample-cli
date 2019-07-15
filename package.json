@@ -1,0 +1,25 @@
+{
+  "name": "flutterwave-sample-cli",
+  "version": "1.0.0",
+  "description": "A simple CLI tool for flutterwave",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iykeevans/flutterwave-sample-cli.git"
+  },
+  "author": "Evan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iykeevans/flutterwave-sample-cli/issues"
+  },
+  "homepage": "https://github.com/iykeevans/flutterwave-sample-cli#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "inquirer": "^6.5.0",
+    "joi": "^14.3.1"
+  }
+}

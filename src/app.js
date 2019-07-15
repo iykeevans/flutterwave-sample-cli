@@ -1,12 +1,8 @@
-const { prompt } = require('inquirer');
-const httpService = require('./httpService');
-const questions = require('./questions');
+import { prompt } from 'inquirer';
+import httpService from './httpService';
+import questions from './questions';
 
 
-const getAnswers = async () => {
-	const answers = await prompt(questions)
-	return answers;
-}
+const getAnswers = async () => await prompt(questions);
 
-const answers = getAnswers();
-httpService(answers);
+httpService(getAnswers());

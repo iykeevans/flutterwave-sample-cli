@@ -1,10 +1,10 @@
-const axios = require('axios');
-const schema = require('./helper/schema');
+import axios from 'axios';
+import schema from './helper/schema';
 require('dotenv').config();
 
 const endpoint = 'https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/hosted/pay'
 
-module.exports = async (data) => {
+export default async (data) => {
 	try {
 		const answers = await data;
 		const result = await schema.validate(answers)
@@ -17,8 +17,7 @@ module.exports = async (data) => {
 		if (err.isJoi) {
 			console.log('An error occurred, ' + err.details[0].message);
 		} else {
-			console.log(err);
+			console.log(err.response.data.message);
 		}
 	}
 };
-

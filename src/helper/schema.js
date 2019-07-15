@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const string = Joi.string().trim().required();
+const string = Joi.string().trim().min(3).required();
 
 module.exports = Joi.object().keys({
 	customer_firstname: string,

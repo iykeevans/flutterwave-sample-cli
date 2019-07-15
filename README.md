@@ -22,5 +22,4 @@ Follow the instructions to have the app up and run:
 >> npm start
 ```
 
-##NB:
-Remember create a .env file in the root directory and add your Public API Key to the .env file 
+**NB: Remember create a .env file in the root directory and add your Public API Key to the .env file** 
